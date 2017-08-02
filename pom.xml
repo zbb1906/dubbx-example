@@ -1,0 +1,88 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.ybveg.govx</groupId>
+  <artifactId>smart-govx-parent</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <modules>
+    <module>common</module>
+    <module>common-web</module>
+    <module>web</module>
+    <module>system-api</module>
+    <module>system-service</module>
+  </modules>
+
+  <packaging>pom</packaging>
+  <name>smart-govx-parent</name>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.5.6.RELEASE</version>
+  </parent>
+
+  <!-- maven部署仓库配置 -->
+  <distributionManagement>
+    <repository>
+      <id>yuanben-release</id>
+      <name>Yuanben Release</name>
+      <url>http://nexus.ybveg.com/repository/Yuanben-Release/</url>
+    </repository>
+    <snapshotRepository>
+      <id>yuanben-snapshot</id>
+      <name>Yuanben Snapshot</name>
+      <url>http://nexus.ybveg.com/repository/Yuanben-Snapshot/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <properties>
+    <project.encoding>UTF-8</project.encoding>
+    <java.version>1.8</java.version>
+
+    <smart-govx.version>0.0.1-SNAPSHOT</smart-govx.version>
+    <web.version>0.0.1-SNAPSHOT</web.version>
+    <common.version>0.0.1-SNAPSHOT</common.version>
+    <system-api.version>0.0.1-SNAPSHOT</system-api.version>
+    <common-web.version>0.0.1-SNAPSHOT</common-web.version>
+
+    <!-- 开源项目 properties  -->
+    <spring.version>4.3.10.RELEASE</spring.version>
+
+  </properties>
+  <dependencyManagement>
+    <dependencies>
+
+      <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.16.18</version>
+        <scope>provided</scope>
+      </dependency>
+
+      <!-- Spring dependency -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-aop</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-tx</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+</project>
