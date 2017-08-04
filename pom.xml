@@ -3,18 +3,15 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.ybveg.govx</groupId>
-  <artifactId>smart-govx-parent</artifactId>
+  <artifactId>smart-govx</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <modules>
-    <module>common</module>
-    <module>common-web</module>
-    <module>web</module>
-    <module>system-api</module>
-    <module>system-service</module>
-  </modules>
-
   <packaging>pom</packaging>
-  <name>smart-govx-parent</name>
+
+  <modules>
+    <module>smart-common</module>
+    <module>smart-dubbox</module>
+    <module>smart-portal</module>
+  </modules>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -22,13 +19,143 @@
     <version>1.5.6.RELEASE</version>
   </parent>
 
-  <scm>
-    <connection>scm:git:http://gitlab.ybveg.com/smart-tog/smart-govx.git</connection>
-    <developerConnection>scm:git:http://gitlab.ybveg.com/smart-tog/smart-govx.git
-    </developerConnection>
-    <url>http://gitlab.ybveg.com/smart-tog/smart-govx</url>
-  </scm>
+  <profiles>
+    <profile>
+      <id>dev</id>
+      <properties>
+        <service.env>dev</service.env>
+      </properties>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+    </profile>
+    <profile>
+      <id>test</id>
+      <properties>
+        <service.env>test</service.env>
+      </properties>
+    </profile>
+    <profile>
+      <id>prod</id>
+      <properties>
+        <service.env>prod</service.env>
+      </properties>
+    </profile>
+  </profiles>
 
+
+  <properties>
+    <!-- service 扫描目录 多个,分开 -->
+    <service.scan>com.ybveg.govx</service.scan>
+
+    <!-- 开源项目 properties  -->
+    <spring.version>4.3.10.RELEASE</spring.version>
+    <smart-govx.encoding>UTF-8</smart-govx.encoding>
+    <!-- 编译的JDK版本 -->
+    <smart-govx.java>1.8</smart-govx.java>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.35</version>
+    </dependency>
+
+    <!-- zookeeper begin -->
+    <dependency>
+      <groupId>org.apache.zookeeper</groupId>
+      <artifactId>zookeeper</artifactId>
+      <version>3.4.6</version>
+      <exclusions>
+        <exclusion>
+          <groupId>log4j</groupId>
+          <artifactId>log4j</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-log4j12</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.curator</groupId>
+      <artifactId>curator-framework</artifactId>
+      <version>2.5.0</version>
+      <exclusions>
+        <exclusion>
+          <groupId>log4j</groupId>
+          <artifactId>log4j</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-log4j12</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <!-- zookeeper end -->
+
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-tx</artifactId>
+        <version>4.3.10.RELEASE</version>
+      </dependency>
+      <dependency>
+        <groupId>com.ybveg.dubbox</groupId>
+        <artifactId>spring-boot-starter-dubbox</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+
+      <!-- dubbox kryo 序列化 -->
+      <dependency>
+        <groupId>com.esotericsoftware.kryo</groupId>
+        <artifactId>kryo</artifactId>
+        <version>2.24.0</version>
+      </dependency>
+      <dependency>
+        <groupId>de.javakaffee</groupId>
+        <artifactId>kryo-serializers</artifactId>
+        <version>0.26</version>
+      </dependency>
+
+    </dependencies>
+
+
+  </dependencyManagement>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>${smart-govx.java}</source>
+          <target>${smart-govx.java}</target>
+          <encoding>${smart-govx.encoding}</encoding>
+        </configuration>
+      </plugin>
+    </plugins>
+
+    <pluginManagement>
+      <plugins>
+      </plugins>
+    </pluginManagement>
+  </build>
 
   <!-- maven部署仓库配置 -->
   <distributionManagement>
@@ -43,54 +170,5 @@
       <url>http://nexus.ybveg.com/repository/Yuanben-Snapshot/</url>
     </snapshotRepository>
   </distributionManagement>
-
-  <properties>
-    <project.encoding>UTF-8</project.encoding>
-    <java.version>1.8</java.version>
-
-    <smart-govx.version>0.0.1-SNAPSHOT</smart-govx.version>
-    <web.version>0.0.1-SNAPSHOT</web.version>
-    <common.version>0.0.1-SNAPSHOT</common.version>
-    <system-api.version>0.0.1-SNAPSHOT</system-api.version>
-    <common-web.version>0.0.1-SNAPSHOT</common-web.version>
-
-    <!-- 开源项目 properties  -->
-    <spring.version>4.3.10.RELEASE</spring.version>
-
-  </properties>
-  <dependencyManagement>
-    <dependencies>
-
-      <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-      <dependency>
-        <groupId>org.projectlombok</groupId>
-        <artifactId>lombok</artifactId>
-        <version>1.16.18</version>
-        <scope>provided</scope>
-      </dependency>
-
-      <!-- Spring dependency -->
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-context</artifactId>
-        <version>${spring.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-webmvc</artifactId>
-        <version>${spring.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-aop</artifactId>
-        <version>${spring.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-tx</artifactId>
-        <version>${spring.version}</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
 
 </project>

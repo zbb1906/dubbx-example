@@ -1,0 +1,56 @@
+server:
+  port: 0
+laolei:
+  dubbox:
+    application:
+      name: demo-provider
+      owner: laolei
+      
+    base-package: com.laolei.dubbo.provider
+   
+      
+#    services:
+#      - interface-class: 
+#        interface: 
+#        exported: 
+#        generic: 
+#        methods:
+#          - 
+#        path: 
+#        ref: 
+#        unexported: 
+#        exported-urls:
+#          - 
+#        provider:
+#          accepts: 
+#          actives: 
+#          async: 
+#          buffer: 
+#          charset: 
+#          client: 
+#          cluster: 
+#          codec: 
+#          connections: 
+#          contextpath: 
+#          default: 
+#          dispatcher: 
+#          exchanger: 
+#          host: 
+#          iothreads: 
+#          loadbalance: 
+#          networker: 
+#          payload: 
+#          port: 
+#          prompt: 
+#          queues: 
+#          retries: 
+#          serialization: 
+#          server: 
+#          status: 
+#          telnet: 
+#          threadpool: 
+#          threads: 
+#          timeout: 
+#          transporter: 
+#          wait: 
+  
