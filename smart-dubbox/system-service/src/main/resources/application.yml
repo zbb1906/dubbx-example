@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: @service.env@ #取配置文件
+  dubbox:
+    scan: com.ybveg.govx.system.services
+    provider:
+      timeout : 30000
+    registry:
+      protocol: zookeeper
+      address: zookeeper://192.168.1.8:2181
+      client: curator
+    protocols:
+      - name: dubbo
+        serialization: kryo
+        optimizer: com.ybveg.govx.serialize.SerializationOptimizerImpl
+    application:
+      name: system-service@project.version@
+      owner: zhangbinbin
