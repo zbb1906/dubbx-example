@@ -28,7 +28,7 @@ public class R implements Serializable {
 
   public R(Object data) {
     this.status = true;
-    this.data = status;
+    this.data = data;
   }
 
   /**

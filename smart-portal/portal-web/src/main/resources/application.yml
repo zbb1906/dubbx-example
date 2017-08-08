@@ -1,3 +1,7 @@
+debug: true
+
+application:
+  version: @project.version@
 spring:
   profiles:
     active: @service.env@ #取配置文件
@@ -15,3 +19,4 @@ spring:
     application:
       name: prota-web@project.version@
       owner: zhangbinbin
+
