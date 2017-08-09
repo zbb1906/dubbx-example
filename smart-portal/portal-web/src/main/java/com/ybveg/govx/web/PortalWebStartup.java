@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableAutoConfiguration
-@ComponentScan({"com.ybveg.govx.common.web.config"})
+@ComponentScan({"com.ybveg.govx.common.web.config", "com.ybveg.jwt"})
 public class PortalWebStartup {
 
   public static void main(String[] args) throws ClassNotFoundException {
