@@ -1,4 +1,4 @@
-package com.ybveg.govx.common.web;
+package com.ybveg.govx.mvc;
 
 import java.io.Serializable;
 import lombok.Getter;
@@ -28,7 +28,7 @@ public class R implements Serializable {
 
   public R(Object data) {
     this.status = true;
-    this.data = status;
+    this.data = data;
   }
 
   /**

@@ -1,6 +1,14 @@
+application:
+  version: @project.version@
 spring:
   profiles:
     active: @service.env@ #取配置文件
+
+  token:
+    expire: @token.expire@
+    refresh-expire: @token.refresh-expire@
+    secert: @token.secert@
+    issuer: @token.issuer@
 
   dubbox:
     scan: com.ybveg.govx.web
@@ -15,3 +23,4 @@ spring:
     application:
       name: prota-web@project.version@
       owner: zhangbinbin
+

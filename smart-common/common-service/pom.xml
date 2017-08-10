@@ -10,10 +10,9 @@
   <modelVersion>4.0.0</modelVersion>
   <packaging>jar</packaging>
 
-  <artifactId>common-web</artifactId>
+  <artifactId>common-service</artifactId>
 
   <dependencies>
-
     <!-- 装配Spring-Boot基础环境 -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -25,23 +24,22 @@
       <artifactId>spring-boot-starter-aop</artifactId>
     </dependency>
 
-    <!-- 使用Spring-MVC -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-
     <dependency>
       <groupId>com.ybveg.dubbox</groupId>
       <artifactId>spring-boot-starter-dubbox</artifactId>
     </dependency>
+
     <dependency>
       <groupId>com.ybveg.govx</groupId>
       <artifactId>common</artifactId>
       <version>${project.version}</version>
     </dependency>
 
-    <!--  kryo 序列化  -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+    </dependency>
+
     <dependency>
       <groupId>com.esotericsoftware.kryo</groupId>
       <artifactId>kryo</artifactId>
@@ -52,15 +50,44 @@
     </dependency>
 
     <dependency>
-      <groupId>com.ybveg</groupId>
-      <artifactId>jwt-token</artifactId>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
     </dependency>
 
-    <!-- 分页结果返回 -->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>tk.mybatis</groupId>
+      <artifactId>mapper</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mybatis.generator</groupId>
+      <artifactId>mybatis-generator-core</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis-spring</artifactId>
+    </dependency>
+
     <dependency>
       <groupId>com.github.pagehelper</groupId>
       <artifactId>pagehelper</artifactId>
     </dependency>
-  </dependencies>
 
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid-spring-boot-starter</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-jdbc</artifactId>
+    </dependency>
+
+  </dependencies>
 </project>

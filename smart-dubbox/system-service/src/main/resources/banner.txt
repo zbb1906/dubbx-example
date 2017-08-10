@@ -1,0 +1,10 @@
+${AnsiColor.BLUE}                  _                                                    _
+ ___  _   _  ___ | |_   ___  _ __ ___          ___   ___  _ __ __   __(_)  ___   ___
+/ __|| | | |/ __|| __| / _ \| '_ ` _ \  _____ / __| / _ \| '__|\ \ / /| | / __| / _ \
+\__ \| |_| |\__ \| |_ |  __/| | | | | ||_____|\__ \|  __/| |    \ V / | || (__ |  __/
+|___/ \__, ||___/ \__| \___||_| |_| |_|       |___/ \___||_|     \_/  |_| \___| \___|
+      |___/
+${AnsiColor.BRIGHT_RED}
+Application Version: ${application.version}${application.formatted-version}
+Spring Boot Version: ${spring-boot.version}${spring-boot.formatted-version}
+${AnsiColor.BRIGHT_BLACK}

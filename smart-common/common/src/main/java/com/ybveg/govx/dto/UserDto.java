@@ -16,10 +16,6 @@ public class UserDto implements Serializable {
 
   //用户id
   private String id;
-  //用户名
   private String username;
-  //部门ID
-  private String deptId;
-  //数据编码
-  private String dataCode;
 }
+

@@ -3,7 +3,8 @@ package com.ybveg.govx.system.services;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.ybveg.govx.dto.UserDto;
 import com.ybveg.govx.system.api.UserService;
-import java.util.UUID;
+import com.ybveg.govx.system.dao.UserMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * 用户实现类
@@ -14,13 +15,12 @@ import java.util.UUID;
 @Service(interfaceClass = UserService.class)
 public class UserServiceImpl implements UserService {
 
+
+  @Autowired
+  private UserMapper mapper;
+
   @Override
   public UserDto findUser(String id) {
-    UserDto user = new UserDto();
-    user.setId(id);
-    user.setDeptId(UUID.randomUUID().toString().replaceAll("-", ""));
-    user.setDataCode("510000");
-    user.setUsername("yuanben");
-    return user;
+    return mapper.find(id);
   }
 }
