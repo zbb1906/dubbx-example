@@ -1,7 +1,8 @@
 package com.ybveg.govx.web.controller.system;
 
 
-import com.ybveg.govx.common.web.R;
+import com.ybveg.govx.mvc.BaseController;
+import com.ybveg.govx.mvc.R;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("env")
-public class EnvController {
+public class EnvController extends BaseController {
 
   @PostMapping("")
   public R env() {

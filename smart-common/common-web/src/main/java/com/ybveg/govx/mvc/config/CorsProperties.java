@@ -1,4 +1,4 @@
-package com.ybveg.govx.common.web.config;
+package com.ybveg.govx.mvc.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

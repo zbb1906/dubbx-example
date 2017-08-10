@@ -55,6 +55,12 @@
       <groupId>com.ybveg</groupId>
       <artifactId>jwt-token</artifactId>
     </dependency>
+
+    <!-- 分页结果返回 -->
+    <dependency>
+      <groupId>com.github.pagehelper</groupId>
+      <artifactId>pagehelper</artifactId>
+    </dependency>
   </dependencies>
 
 </project>

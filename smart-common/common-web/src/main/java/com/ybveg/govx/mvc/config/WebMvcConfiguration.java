@@ -1,13 +1,15 @@
-package com.ybveg.govx.common.web.config;
+package com.ybveg.govx.mvc.config;
 
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
-import com.ybveg.govx.common.web.interceptor.AuthorizationInterceptor;
+import com.ybveg.govx.mvc.interceptor.AuthorizationInterceptor;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -29,17 +31,29 @@ public class WebMvcConfiguration extends WebMvcConfigurerAdapter {
   /**
    * 利用fastjson替换掉jackson，且解决中文乱码问题
    */
-  @Override
-  public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+//  @Override
+//  public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+//    FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
+//    FastJsonConfig fastJsonConfig = new FastJsonConfig();
+//    fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
+//    //处理中文乱码问题
+//    List<MediaType> fastMediaTypes = new ArrayList<>();
+//    fastMediaTypes.add(MediaType.APPLICATION_JSON_UTF8);
+//    fastConverter.setSupportedMediaTypes(fastMediaTypes);
+//    fastConverter.setFastJsonConfig(fastJsonConfig);
+//    converters.add(fastConverter);
+//  }
+  @Bean
+  public HttpMessageConverters fastJsonHttpMessageConverters() {
     FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
     FastJsonConfig fastJsonConfig = new FastJsonConfig();
     fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
-    //处理中文乱码问题
     List<MediaType> fastMediaTypes = new ArrayList<>();
     fastMediaTypes.add(MediaType.APPLICATION_JSON_UTF8);
     fastConverter.setSupportedMediaTypes(fastMediaTypes);
     fastConverter.setFastJsonConfig(fastJsonConfig);
-    converters.add(fastConverter);
+    HttpMessageConverter<?> converter = fastConverter;
+    return new HttpMessageConverters(converter);
   }
 
   /**

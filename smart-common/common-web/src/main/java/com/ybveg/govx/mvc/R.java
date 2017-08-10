@@ -1,4 +1,4 @@
-package com.ybveg.govx.common.web;
+package com.ybveg.govx.mvc;
 
 import java.io.Serializable;
 import lombok.Getter;

@@ -1,6 +1,6 @@
-package com.ybveg.govx.common.web.interceptor;
+package com.ybveg.govx.mvc.interceptor;
 
-import com.ybveg.govx.common.web.SessionModel;
+import com.ybveg.govx.mvc.SessionModel;
 import com.ybveg.jwt.token.Token;
 import com.ybveg.jwt.token.TokenFactory;
 import java.lang.reflect.Method;
