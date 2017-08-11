@@ -14,7 +14,8 @@ public class GeneratorApp {
     List<String> warnings = new ArrayList<String>();
     boolean overwrite = true;
     //todo 项目根路径不要有中文,我的有中文,所以使用绝对路径
-    File configFile = new File("mybatis-ger.xml");
+    File configFile = new File(
+        "F:\\job\\ideaWorkSpace\\smartGov\\smart-govx\\smart-common\\common-service\\src\\test\\java\\generator\\mybatis-ger.xml");
     ConfigurationParser cp = new ConfigurationParser(warnings);
     Configuration config = cp.parseConfiguration(configFile);
     DefaultShellCallback callback = new DefaultShellCallback(overwrite);

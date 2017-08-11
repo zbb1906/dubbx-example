@@ -12,28 +12,38 @@
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
         <!--数据库链接地址账号密码-->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.7/govx_dev?characterEncoding\=utf-8" userId="gov" password="yuanben">
+      <jdbcConnection
+        connectionURL="jdbc:mysql://192.168.1.7:3306/smart_dev?useSSL=false&amp;nullNamePatternMatchesAll=true"
+        driverClass="com.mysql.cj.jdbc.Driver" password="yuanben" userId="smart">
         </jdbcConnection>
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
         <!--todo 生成Model类存放位置-->
-        <javaModelGenerator targetPackage="com.shundian.govx.api.po.biz" targetProject="D:\govx\db-core\src\test\java">
+      <javaModelGenerator targetPackage="com.ybveg.govx.system.model.po"
+        targetProject="F:\job\ideaWorkSpace\smartGov\smart-govx\smart-dubbox\system-api\src\main\java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <!--todo 生成映射文件存放位置-->
-        <sqlMapGenerator targetPackage="com.shundian.govx.mapper.biz" targetProject="D:\govx\db-core\src\test\java">
+      <sqlMapGenerator targetPackage="mapper"
+        targetProject="F:\job\ideaWorkSpace\smartGov\smart-govx\smart-dubbox\system-service\src\main\resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
         <!--todo 生成DaoMapper类存放位置-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.shundian.govx.mapper.biz" targetProject="D:\govx\db-core\src\test\java">
+      <javaClientGenerator targetPackage="com.ybveg.govx.system.dao"
+        targetProject="F:\job\ideaWorkSpace\smartGov\smart-govx\smart-dubbox\system-service\src\main\java"
+        type="XMLMAPPER">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!--todo 生成对应表及类名,需要记住的一点是逆向工程无法生成关联关系,只能生成单表操作-->
-        <table tableName="check_report" domainObjectName="CheckReport"></table>
-        <table tableName="check_report_item" domainObjectName="CheckReportItem"></table>
+      <table domainObjectName="Test" enableCountByExample="false"
+        enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"
+        selectByExampleQueryId="false" tableName="sys_test">
+        <!-- 指定是否只生成domain类，如果设置为true，只生成domain类，如果还配置了sqlMapGenerator，那么在mapper XML文件中，只生成resultMap元素 -->
+        <property name="sqlMapGenerator" value="true"/>
+      </table>
 
     </context>
 </generatorConfiguration>
