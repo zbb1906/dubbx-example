@@ -2,6 +2,7 @@ package com.ybveg.govx.mvc.interceptor;
 
 import com.ybveg.govx.mvc.SessionModel;
 import com.ybveg.govx.mvc.auth.FreeLogin;
+import com.ybveg.govx.system.api.UserService;
 import com.ybveg.jwt.token.Token;
 import com.ybveg.jwt.token.TokenFactory;
 import java.lang.annotation.Annotation;
@@ -14,8 +15,11 @@ public class AuthorizationInterceptor extends HandlerInterceptorAdapter {
 
   private TokenFactory factory;
 
-  public AuthorizationInterceptor(TokenFactory factory) {
+  private UserService userService;
+
+  public AuthorizationInterceptor(TokenFactory factory, UserService userService) {
     this.factory = factory;
+    this.userService = userService;
   }
 
   public boolean preHandle(HttpServletRequest request,

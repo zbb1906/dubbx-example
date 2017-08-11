@@ -39,8 +39,4 @@
     </trim>
   </insert>
 
-  <select id="find" resultType="com.ybveg.govx.dto.UserDto">
-    select id,username from sys_user where id = #{id}
-  </select>
-  
 </mapper>

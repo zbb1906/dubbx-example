@@ -6,20 +6,20 @@ import com.ybveg.govx.mvc.auth.FuncType;
  * @auther zbb
  * @create 2017/8/11
  */
-public class ScanFunc implements FuncType {
+public class AddFunc implements FuncType {
 
   @Override
   public String getCode() {
-    return "func.scan";
+    return "func.add";
   }
 
   @Override
   public String getName() {
-    return "扫描功能";
+    return "添加";
   }
 
   @Override
   public String desc() {
-    return "扫描功能按钮";
+    return "添加功能按钮";
   }
 }

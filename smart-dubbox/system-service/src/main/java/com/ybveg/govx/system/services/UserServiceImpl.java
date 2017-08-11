@@ -1,9 +1,9 @@
 package com.ybveg.govx.system.services;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.ybveg.govx.dto.UserDto;
 import com.ybveg.govx.system.api.UserService;
 import com.ybveg.govx.system.dao.UserMapper;
+import com.ybveg.govx.system.model.dto.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -21,6 +21,6 @@ public class UserServiceImpl implements UserService {
 
   @Override
   public UserDto findUser(String id) {
-    return mapper.find(id);
+    return new UserDto();
   }
 }

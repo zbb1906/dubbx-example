@@ -68,6 +68,12 @@
       <artifactId>pagehelper</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>com.ybveg.govx</groupId>
+      <artifactId>system-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
   </dependencies>
 
 </project>
