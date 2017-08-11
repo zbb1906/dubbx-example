@@ -22,7 +22,7 @@ public @interface Module {
    *
    * @return 这个Controller含有那些模块
    */
-  Class<? extends ModuleType> value()[];
+  Class<? extends ModuleType>[] value();
 
 
 }
