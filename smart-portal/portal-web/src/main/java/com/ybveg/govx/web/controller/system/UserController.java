@@ -4,6 +4,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.ybveg.govx.dto.UserDto;
 import com.ybveg.govx.mvc.BaseController;
 import com.ybveg.govx.mvc.R;
+import com.ybveg.govx.mvc.SessionModel;
 import com.ybveg.govx.system.api.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,8 +30,9 @@ public class UserController extends BaseController {
   }
 
   @GetMapping("info")
-  public R info(String id) {
-    UserDto user = userService.findUser(id);
+  public R getInfo() {
+    SessionModel session = getCurrentSession();
+    UserDto user = userService.findUser(session.getId());
     return R.ok(user);
   }
 }

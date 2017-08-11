@@ -31,6 +31,12 @@
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 
+    <!-- 使用Spring-logging 配置 -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-logging</artifactId>
+    </dependency>
+
     <dependency>
       <groupId>com.ybveg.dubbox</groupId>
       <artifactId>spring-boot-starter-dubbox</artifactId>
@@ -61,6 +67,7 @@
       <groupId>com.github.pagehelper</groupId>
       <artifactId>pagehelper</artifactId>
     </dependency>
+
   </dependencies>
 
 </project>
