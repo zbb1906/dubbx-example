@@ -13,7 +13,7 @@ public interface ModuleType {
   /**
    * 模块编码 编码规则 <br/>
    *
-   * 工程名.模块名例如: <b>system.user</b>
+   * 工程名.包名.模块名 例如: <b>system.admin.module</b>
    */
   String getCode();
 
@@ -21,10 +21,5 @@ public interface ModuleType {
    * 模块名称
    */
   String getName();
-
-  /**
-   * 模块说明
-   */
-  String desc();
 
 }

@@ -6,10 +6,12 @@ package com.ybveg.govx.mvc.auth;
  * @auther zbb
  * @create 2017/8/11
  */
-public interface FuncType {
+public interface FunctionType {
 
   /**
-   * 功能编码
+   * 功能编码 <br/>
+   *
+   * 编码规则 func.功能名称 例如: func.scan 扫描功能
    */
   String getCode();
 
@@ -17,10 +19,5 @@ public interface FuncType {
    * 功能名称
    */
   String getName();
-
-  /**
-   * 功能说明
-   */
-  String desc();
 
 }

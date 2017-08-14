@@ -14,5 +14,5 @@ public @interface Relation {
 
   Class<? extends ModuleType> module();
 
-  Class<? extends FuncType> func();
+  Class<? extends FunctionType> func();
 }

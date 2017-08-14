@@ -1,4 +1,4 @@
-package com.ybveg.govx.web.controller.system;
+package com.ybveg.govx.controller.user;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSON;

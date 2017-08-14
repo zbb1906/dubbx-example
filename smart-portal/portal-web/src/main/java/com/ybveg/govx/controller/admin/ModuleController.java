@@ -1,12 +1,12 @@
-package com.ybveg.govx.web.controller.system;
+package com.ybveg.govx.controller.admin;
 
 
+import com.ybveg.govx.module.function.Scan;
+import com.ybveg.govx.module.system.ModuleModule;
 import com.ybveg.govx.mvc.BaseController;
 import com.ybveg.govx.mvc.R;
 import com.ybveg.govx.mvc.auth.Function;
 import com.ybveg.govx.mvc.auth.Module;
-import com.ybveg.govx.mvc.module.function.ScanFunc;
-import com.ybveg.govx.mvc.module.system.SystemMoudle;
 import java.util.Map;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,12 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
  * 模块管理
  */
 @RestController
-@RequestMapping("sys/moudle")
-@Module(SystemMoudle.class)
-public class MoudleController extends BaseController {
+@RequestMapping("admin/module")
+@Module(ModuleModule.class)
+public class ModuleController extends BaseController {
 
   @PostMapping("scan")
-  @Function(ScanFunc.class)
+  @Function(Scan.class)
   public R scan() {
     return R.ok();
   }

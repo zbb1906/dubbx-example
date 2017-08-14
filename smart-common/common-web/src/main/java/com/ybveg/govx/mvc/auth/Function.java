@@ -6,8 +6,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-
 /**
  * 功能注解作用于方法上<br/>
  *
@@ -24,7 +22,7 @@ public @interface Function {
   /**
    * @return 这个方法上可以执行那些功能
    */
-  Class<? extends FuncType>[] value();
+  Class<? extends FunctionType>[] value();
 
   Relation[] relation() default {};
 }

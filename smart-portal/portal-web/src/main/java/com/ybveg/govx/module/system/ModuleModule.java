@@ -1,4 +1,4 @@
-package com.ybveg.govx.mvc.module.system;
+package com.ybveg.govx.module.system;
 
 import com.ybveg.govx.mvc.auth.ModuleType;
 
@@ -8,7 +8,7 @@ import com.ybveg.govx.mvc.auth.ModuleType;
  * @auther zbb
  * @create 2017/8/11
  */
-public class SystemMoudle implements ModuleType {
+public class ModuleModule implements ModuleType {
 
   @Override
   public String getCode() {
@@ -18,10 +18,5 @@ public class SystemMoudle implements ModuleType {
   @Override
   public String getName() {
     return "模块管理";
-  }
-
-  @Override
-  public String desc() {
-    return "后台管理-模块管理";
   }
 }
