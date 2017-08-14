@@ -3,7 +3,6 @@ package com.ybveg.govx.system.model.po.sys;
 import java.util.Date;
 
 public class Menu {
-
     private String id;
 
     private String name;

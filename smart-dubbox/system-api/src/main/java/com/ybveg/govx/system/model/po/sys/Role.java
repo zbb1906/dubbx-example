@@ -4,53 +4,53 @@ import java.util.Date;
 
 public class Role {
 
-  private String id;
+    private String id;
 
-  private String type;
+    private String type;
 
-  private String deptId;
+    private String deptId;
 
-  private String name;
+    private String name;
 
-  private Date createTime;
+    private Date createTime;
 
-  public String getId() {
-    return id;
-  }
+    public String getId() {
+        return id;
+    }
 
-  public void setId(String id) {
-    this.id = id == null ? null : id.trim();
-  }
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
 
-  public String getType() {
-    return type;
-  }
+    public String getType() {
+        return type;
+    }
 
-  public void setType(String type) {
-    this.type = type == null ? null : type.trim();
-  }
+    public void setType(String type) {
+        this.type = type == null ? null : type.trim();
+    }
 
-  public String getDeptId() {
-    return deptId;
-  }
+    public String getDeptId() {
+        return deptId;
+    }
 
-  public void setDeptId(String deptId) {
-    this.deptId = deptId == null ? null : deptId.trim();
-  }
+    public void setDeptId(String deptId) {
+        this.deptId = deptId == null ? null : deptId.trim();
+    }
 
-  public String getName() {
-    return name;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public void setName(String name) {
-    this.name = name == null ? null : name.trim();
-  }
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
 
-  public Date getCreateTime() {
-    return createTime;
-  }
+    public Date getCreateTime() {
+        return createTime;
+    }
 
-  public void setCreateTime(Date createTime) {
-    this.createTime = createTime;
-  }
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 }

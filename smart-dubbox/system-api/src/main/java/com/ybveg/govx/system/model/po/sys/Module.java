@@ -1,16 +1,17 @@
 package com.ybveg.govx.system.model.po.sys;
 
-public class MoudleFunction {
+import java.util.Date;
 
+public class Module {
     private String id;
 
-    private String moudleId;
-
-    private String funcCode;
+    private String moduleCode;
 
     private String clazz;
 
     private String name;
+
+    private Date createTime;
 
     public String getId() {
         return id;
@@ -20,20 +21,12 @@ public class MoudleFunction {
         this.id = id == null ? null : id.trim();
     }
 
-    public String getMoudleId() {
-        return moudleId;
+    public String getModuleCode() {
+        return moduleCode;
     }
 
-    public void setMoudleId(String moudleId) {
-        this.moudleId = moudleId == null ? null : moudleId.trim();
-    }
-
-    public String getFuncCode() {
-        return funcCode;
-    }
-
-    public void setFuncCode(String funcCode) {
-        this.funcCode = funcCode == null ? null : funcCode.trim();
+    public void setModuleCode(String moduleCode) {
+        this.moduleCode = moduleCode == null ? null : moduleCode.trim();
     }
 
     public String getClazz() {
@@ -50,5 +43,13 @@ public class MoudleFunction {
 
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }
