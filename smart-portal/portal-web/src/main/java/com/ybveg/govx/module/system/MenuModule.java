@@ -1,4 +1,4 @@
-package com.ybveg.govx.mvc.module.system;
+package com.ybveg.govx.module.system;
 
 import com.ybveg.govx.mvc.auth.ModuleType;
 
@@ -8,7 +8,7 @@ import com.ybveg.govx.mvc.auth.ModuleType;
  * @auther zbb
  * @create 2017/8/11
  */
-public class MenuMoudle implements ModuleType {
+public class MenuModule implements ModuleType {
 
   @Override
   public String getCode() {
@@ -20,8 +20,4 @@ public class MenuMoudle implements ModuleType {
     return "菜单管理";
   }
 
-  @Override
-  public String desc() {
-    return "后台管理-菜单模块";
-  }
 }
