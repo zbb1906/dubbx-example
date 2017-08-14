@@ -1,10 +1,9 @@
 package com.ybveg.govx.system.model.po.sys;
 
-public class MenuMoudle {
-
+public class MenuModule {
     private String menuId;
 
-    private String moudleId;
+    private String moduleId;
 
     public String getMenuId() {
         return menuId;
@@ -14,11 +13,11 @@ public class MenuMoudle {
         this.menuId = menuId == null ? null : menuId.trim();
     }
 
-    public String getMoudleId() {
-        return moudleId;
+    public String getModuleId() {
+        return moduleId;
     }
 
-    public void setMoudleId(String moudleId) {
-        this.moudleId = moudleId == null ? null : moudleId.trim();
+    public void setModuleId(String moduleId) {
+        this.moduleId = moduleId == null ? null : moduleId.trim();
     }
 }
