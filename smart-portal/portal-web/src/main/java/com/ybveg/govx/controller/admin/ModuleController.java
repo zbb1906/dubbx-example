@@ -2,7 +2,7 @@ package com.ybveg.govx.controller.admin;
 
 
 import com.ybveg.govx.module.function.Scan;
-import com.ybveg.govx.module.system.ModuleModule;
+import com.ybveg.govx.module.ModuleModule;
 import com.ybveg.govx.mvc.BaseController;
 import com.ybveg.govx.mvc.R;
 import com.ybveg.govx.mvc.auth.Function;
