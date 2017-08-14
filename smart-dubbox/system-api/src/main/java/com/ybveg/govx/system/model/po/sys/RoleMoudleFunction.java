@@ -4,7 +4,7 @@ public class RoleMoudleFunction {
 
   private String roleId;
 
-  private String moduleFuncId;
+  private String moudleFuncId;
 
   public String getRoleId() {
     return roleId;
@@ -14,11 +14,11 @@ public class RoleMoudleFunction {
     this.roleId = roleId == null ? null : roleId.trim();
   }
 
-  public String getModuleFuncId() {
-    return moduleFuncId;
+  public String getMoudleFuncId() {
+    return moudleFuncId;
   }
 
-  public void setModuleFuncId(String moduleFuncId) {
-    this.moduleFuncId = moduleFuncId == null ? null : moduleFuncId.trim();
+  public void setMoudleFuncId(String moudleFuncId) {
+    this.moudleFuncId = moudleFuncId == null ? null : moudleFuncId.trim();
   }
 }

@@ -1,60 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.ybveg.govx.system.dao.sys.RoleMoudleFunctionMapper">
   <resultMap id="BaseResultMap" type="com.ybveg.govx.system.model.po.sys.RoleMoudleFunction">
     <result column="role_id" jdbcType="VARCHAR" property="roleId"/>
-    <result column="module_func_id" jdbcType="VARCHAR" property="moduleFuncId"/>
+    <result column="moudle_func_id" jdbcType="VARCHAR" property="moudleFuncId"/>
   </resultMap>
   <insert id="insert" parameterType="com.ybveg.govx.system.model.po.sys.RoleMoudleFunction">
-    insert into sys_role_module_func (role_id, module_func_id)
-    values (#{roleId,jdbcType=VARCHAR}, #{moduleFuncId,jdbcType=VARCHAR})
+    insert into sys_role_moudle_func (role_id, moudle_func_id)
+    values (#{roleId,jdbcType=VARCHAR}, #{moudleFuncId,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective"
     parameterType="com.ybveg.govx.system.model.po.sys.RoleMoudleFunction">
-    insert into sys_role_module_func
+    insert into sys_role_moudle_func
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="roleId != null">
         role_id,
       </if>
-      <if test="moduleFuncId != null">
-        module_func_id,
+      <if test="moudleFuncId != null">
+        moudle_func_id,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="roleId != null">
         #{roleId,jdbcType=VARCHAR},
       </if>
-      <if test="moduleFuncId != null">
-        #{moduleFuncId,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <resultMap id="BaseResultMap" type="com.ybveg.govx.system.model.po.sys.RoleMoudleFunction">
-    <result column="role_id" jdbcType="VARCHAR" property="roleId"/>
-    <result column="module_func_id" jdbcType="VARCHAR" property="moduleFuncId"/>
-  </resultMap>
-  <insert id="insert" parameterType="com.ybveg.govx.system.model.po.sys.RoleMoudleFunction">
-    insert into sys_role_module_func (role_id, module_func_id)
-    values (#{roleId,jdbcType=VARCHAR}, #{moduleFuncId,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective"
-    parameterType="com.ybveg.govx.system.model.po.sys.RoleMoudleFunction">
-    insert into sys_role_module_func
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="roleId != null">
-        role_id,
-      </if>
-      <if test="moduleFuncId != null">
-        module_func_id,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="roleId != null">
-        #{roleId,jdbcType=VARCHAR},
-      </if>
-      <if test="moduleFuncId != null">
-        #{moduleFuncId,jdbcType=VARCHAR},
+      <if test="moudleFuncId != null">
+        #{moudleFuncId,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
