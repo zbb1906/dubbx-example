@@ -1,6 +1,6 @@
 package com.ybveg.govx.system.model.po.sys;
 
-public class ModuleFunction {
+public class MoudleFunction {
 
   private String id;
 
@@ -8,7 +8,7 @@ public class ModuleFunction {
 
   private String funcCode;
 
-  private String class;
+  private String clazz;
 
   private String name;
 
@@ -36,12 +36,12 @@ public class ModuleFunction {
     this.funcCode = funcCode == null ? null : funcCode.trim();
   }
 
-  public String getClass() {
-    return class ;
+  public String getClazz() {
+    return clazz;
   }
 
-  public void setClass(String class) {
-    this. class =class ==null ? null : class.trim();
+  public void setClass(String clazz) {
+    this.clazz = clazz == null ? null : clazz.trim();
   }
 
   public String getName() {

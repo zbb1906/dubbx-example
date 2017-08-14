@@ -1,6 +1,6 @@
 package com.ybveg.govx.system.model.po.sys;
 
-public class RoleModuleFunction {
+public class RoleMoudleFunction {
 
   private String roleId;
 
