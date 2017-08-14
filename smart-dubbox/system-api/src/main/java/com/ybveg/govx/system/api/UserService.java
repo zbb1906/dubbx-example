@@ -1,6 +1,7 @@
 package com.ybveg.govx.system.api;
 
-import com.ybveg.govx.dto.UserDto;
+
+import com.ybveg.govx.system.model.dto.UserDto;
 
 /**
  * 用户
@@ -17,4 +18,5 @@ public interface UserService {
    * @return 返回用户对象UserDto
    */
   public UserDto findUser(String id);
+
 }

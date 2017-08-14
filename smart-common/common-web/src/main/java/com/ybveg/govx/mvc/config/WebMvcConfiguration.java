@@ -1,9 +1,12 @@
 package com.ybveg.govx.mvc.config;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import com.ybveg.govx.mvc.interceptor.AuthorizationInterceptor;
+import com.ybveg.govx.system.api.UserService;
+import com.ybveg.jwt.token.TokenFactory;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +30,12 @@ public class WebMvcConfiguration extends WebMvcConfigurerAdapter {
 
   @Autowired
   private CorsProperties cors;
+
+  @Autowired
+  private TokenFactory factory;
+
+  @Reference
+  private UserService userService;  //注入用户服务类 便于获取权限信息
 
   /**
    * 利用fastjson替换掉jackson，且解决中文乱码问题
@@ -75,7 +84,8 @@ public class WebMvcConfiguration extends WebMvcConfigurerAdapter {
 
   @Override
   public void addInterceptors(InterceptorRegistry registry) {
-    AuthorizationInterceptor interceptor = new AuthorizationInterceptor();
+    AuthorizationInterceptor interceptor = new AuthorizationInterceptor(factory, userService);
+
     registry.addInterceptor(interceptor).addPathPatterns("/**")
         .excludePathPatterns("/login", "/error", "/reset");
     super.addInterceptors(registry);

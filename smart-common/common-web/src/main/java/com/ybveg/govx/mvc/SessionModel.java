@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 public class SessionModel implements Serializable {
 
-  public static String KEY = "_SESSION_KEY";
+  public final static String KEY = "_SESSION_KEY";
 
   private static final long serialVersionUID = -1545525454842567744L;
 

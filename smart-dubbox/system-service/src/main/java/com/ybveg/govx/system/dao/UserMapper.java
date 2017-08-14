@@ -1,15 +1,10 @@
 package com.ybveg.govx.system.dao;
 
-import com.ybveg.govx.data.mapper.BaseMapper;
-import com.ybveg.govx.dto.UserDto;
-import org.apache.ibatis.annotations.Param;
+import com.ybveg.govx.system.model.po.User;
 
-/**
- * @auther zbb
- * @create 2017/8/10
- */
-public interface UserMapper extends BaseMapper<UserDto> {
+public interface UserMapper {
 
-  UserDto find(@Param("id") String id);
+    int insert(User record);
 
+    int insertSelective(User record);
 }
