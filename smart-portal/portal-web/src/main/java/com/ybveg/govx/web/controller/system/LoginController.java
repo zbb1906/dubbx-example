@@ -2,11 +2,11 @@ package com.ybveg.govx.web.controller.system;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSON;
-import com.ybveg.govx.dto.UserDto;
 import com.ybveg.govx.mvc.BaseController;
 import com.ybveg.govx.mvc.R;
 import com.ybveg.govx.mvc.SessionModel;
 import com.ybveg.govx.system.api.UserService;
+import com.ybveg.govx.system.model.dto.UserDto;
 import com.ybveg.jwt.token.Token;
 import com.ybveg.jwt.token.TokenFactory;
 import java.util.Date;

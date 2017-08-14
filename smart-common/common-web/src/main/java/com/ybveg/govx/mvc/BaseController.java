@@ -12,7 +12,7 @@ public abstract class BaseController {
   @Autowired
   HttpServletRequest request;
 
-  SessionModel getCurrentSession() {
+  public SessionModel getCurrentSession() {
     Object obj = request.getAttribute(SessionModel.KEY);
     return obj != null ? (SessionModel) obj : null;
   }

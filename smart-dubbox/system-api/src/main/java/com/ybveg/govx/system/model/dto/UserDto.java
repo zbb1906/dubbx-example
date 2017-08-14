@@ -1,21 +1,17 @@
-package com.ybveg.govx.dto;
+package com.ybveg.govx.system.model.dto;
 
 import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 
-/**
- * @auther zbb
- * @create 2017/8/2
- */
 @Getter
 @Setter
 public class UserDto implements Serializable {
 
-  private static final long serialVersionUID = -1646397150077018363L;
-
-  //用户id
   private String id;
-  private String username;
-}
 
+  private String username;
+
+  private String password;
+
+}
