@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ybveg.govx.system.mapper.admin.ModuleMapper">
+  <resultMap id="BaseResultMap" type="com.ybveg.govx.system.model.po.admin.Module">
+    <result column="id" jdbcType="VARCHAR" property="id"/>
+    <result column="module_code" jdbcType="VARCHAR" property="moduleCode"/>
+    <result column="clazz" jdbcType="VARCHAR" property="clazz"/>
+    <result column="name" jdbcType="VARCHAR" property="name"/>
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+  </resultMap>
+  <insert id="insert" parameterType="com.ybveg.govx.system.model.po.admin.Module">
+    insert into sys_module (id, module_code, clazz,
+    name, create_time)
+    values (#{id,jdbcType=VARCHAR}, #{moduleCode,jdbcType=VARCHAR}, #{clazz,jdbcType=VARCHAR},
+    #{name,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ybveg.govx.system.model.po.admin.Module">
+    insert into sys_module
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="moduleCode != null">
+        module_code,
+      </if>
+      <if test="clazz != null">
+        clazz,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="moduleCode != null">
+        #{moduleCode,jdbcType=VARCHAR},
+      </if>
+      <if test="clazz != null">
+        #{clazz,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>
