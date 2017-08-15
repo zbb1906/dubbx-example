@@ -11,12 +11,8 @@ import org.springframework.context.annotation.Bean;
 // 不启动 AuthAutoConfiguration 引入进来主要是dubbo 要多实体类序列化
 @Slf4j
 @SpringBootApplication(exclude = AuthAutoConfiguration.class)
-public class SystemStartup {
 
-  @Bean
-  public CountDownLatch closeLatch() {  //利用 CountDownLatch保持线程阻塞
-    return new CountDownLatch(1);
-  }
+public class SystemStartup {
 
   public static void main(String[] args) throws InterruptedException {
     long start = System.currentTimeMillis();
@@ -30,5 +26,10 @@ public class SystemStartup {
     log.info("System Provider start success! times {}s", time);
     CountDownLatch closeLatch = ctx.getBean(CountDownLatch.class);
     closeLatch.await();
+  }
+
+  @Bean
+  public CountDownLatch closeLatch() {  //利用 CountDownLatch保持线程阻塞
+    return new CountDownLatch(1);
   }
 }

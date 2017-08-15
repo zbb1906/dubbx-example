@@ -1,6 +1,7 @@
 package com.ybveg.govx.data.config;
 
 import com.github.pagehelper.PageHelper;
+import com.ybveg.dubbox.config.DubboxProperties;
 import java.util.Properties;
 import javax.sql.DataSource;
 import lombok.extern.slf4j.Slf4j;
@@ -9,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
@@ -27,18 +29,21 @@ import org.springframework.transaction.annotation.TransactionManagementConfigure
 @Slf4j
 @Configuration
 @EnableTransactionManagement
+@EnableConfigurationProperties({MybatisProperties.class})
 public class MyBatisConfiguration implements TransactionManagementConfigurer {
 
   @SuppressWarnings("SpringJavaAutowiringInspection")
   @Autowired
   DataSource dataSource;
 
+  @Autowired
+  private MybatisProperties mybatisProperties;
+
   @Bean(name = "sqlSessionFactory")
   public SqlSessionFactory sqlSessionFactoryBean() {
     SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
     bean.setDataSource(dataSource);
-    bean.setTypeAliasesPackage("com.ybveg.govx.dto");
-    bean.setTypeAliasesPackage("com.ybveg.govx.system.model");
+    bean.setTypeAliasesPackage(mybatisProperties.getAliasPackage());
 
     //分页插件
     PageHelper pageHelper = new PageHelper();

@@ -1,6 +1,8 @@
 package com.ybveg.govx.data.config;
 
 import java.util.Properties;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,21 +19,23 @@ import tk.mybatis.spring.mapper.MapperScannerConfigurer;
 @AutoConfigureAfter(MyBatisConfiguration.class)
 public class MapperScannerConfiguration {
 
+  @Autowired
+  private MybatisProperties mybatisProperties;
+
   @Bean
   public MapperScannerConfigurer mapperScannerConfigurer() {
     MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
     mapperScannerConfigurer.setSqlSessionFactoryBeanName("sqlSessionFactory");
     //mapperScannerConfigurer.setBasePackage("tk.mybatis.springboot.mapper");
-    mapperScannerConfigurer.setBasePackage("com.ybveg.govx.**.mapper.**");
+    mapperScannerConfigurer.setBasePackage(mybatisProperties.getBasePackage());
     mapperScannerConfigurer.getMapperHelper().getConfig().setOrder("BEFORE");  //回写uuid配置
     Properties properties = new Properties();
 
-    properties.setProperty("mappers", "com.ybveg.govx.system.myMapper.BaseMapper");
+    properties.setProperty("mappers", "com.ybveg.govx.data.mapper.BaseMapper");
 
     properties.setProperty("notEmpty", "false");
     properties.setProperty("IDENTITY", "MYSQL");
     mapperScannerConfigurer.setProperties(properties);
     return mapperScannerConfigurer;
   }
-
 }
