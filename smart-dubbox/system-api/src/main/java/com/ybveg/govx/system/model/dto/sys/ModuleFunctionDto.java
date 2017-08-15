@@ -1,4 +1,4 @@
-package com.ybveg.govx.system.model.po.sys;
+package com.ybveg.govx.system.model.dto.sys;
 
 
 import lombok.Getter;
@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ModuleFunction {
+public class ModuleFunctionDto {
 
   private String id;
 

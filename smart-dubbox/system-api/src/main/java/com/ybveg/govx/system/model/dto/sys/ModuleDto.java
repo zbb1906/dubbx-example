@@ -1,4 +1,4 @@
-package com.ybveg.govx.system.model.po.sys;
+package com.ybveg.govx.system.model.dto.sys;
 
 import java.util.Date;
 import lombok.Getter;
@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Module {
+public class ModuleDto {
 
   private String id;
 

@@ -26,7 +26,7 @@ public class MapperScannerConfiguration {
     mapperScannerConfigurer.getMapperHelper().getConfig().setOrder("BEFORE");  //回写uuid配置
     Properties properties = new Properties();
 
-    properties.setProperty("mappers", "com.ybveg.govx.data.mapper.BaseMapper");
+    //properties.setProperty("mappers", "com.ybveg.govx.data.mapper.BaseMapper");
 
     properties.setProperty("notEmpty", "false");
     properties.setProperty("IDENTITY", "MYSQL");

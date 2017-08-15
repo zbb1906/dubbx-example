@@ -1,9 +1,20 @@
 package com.ybveg.govx.system.model.po.sys;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
-public class Role {
+@Getter
+@Setter
+@Table(name = "sys_role")
+public class Role implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
+    @Id
     private String id;
 
     private String type;
@@ -14,43 +25,4 @@ public class Role {
 
     private Date createTime;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id == null ? null : id.trim();
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type == null ? null : type.trim();
-    }
-
-    public String getDeptId() {
-        return deptId;
-    }
-
-    public void setDeptId(String deptId) {
-        this.deptId = deptId == null ? null : deptId.trim();
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
 }

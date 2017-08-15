@@ -7,8 +7,6 @@ import com.ybveg.auth.token.Token;
 import com.ybveg.govx.mvc.BaseController;
 import com.ybveg.govx.mvc.R;
 import com.ybveg.govx.mvc.SessionModel;
-import com.ybveg.govx.system.api.UserService;
-import com.ybveg.govx.system.model.dto.UserDto;
 import java.util.Date;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,9 +25,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("")
 public class LoginController extends BaseController {
 
-  @Reference
-  private UserService userService;
-
   @Autowired
   private AuthManager manager;
 
@@ -44,8 +39,6 @@ public class LoginController extends BaseController {
     session.setUsername("zhangbinbin");
     session.setType("1");
     Token token = manager.createAccessToken(session.getId(), session);
-    UserDto user = userService.findUser("123");
-    log.info(JSON.toJSONString(user));
     return R.ok(token);
   }
 
