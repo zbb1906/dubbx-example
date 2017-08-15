@@ -1,12 +1,12 @@
 package com.ybveg.govx.controller.admin;
 
 
-import com.ybveg.govx.module.function.Scan;
+import com.ybveg.auth.Function;
+import com.ybveg.auth.Module;
 import com.ybveg.govx.module.ModuleModule;
+import com.ybveg.govx.module.function.Scan;
 import com.ybveg.govx.mvc.BaseController;
 import com.ybveg.govx.mvc.R;
-import com.ybveg.govx.mvc.auth.Function;
-import com.ybveg.govx.mvc.auth.Module;
 import java.util.Map;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

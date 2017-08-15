@@ -1,6 +1,6 @@
 package com.ybveg.govx.module.function;
 
-import com.ybveg.govx.mvc.auth.FunctionType;
+import com.ybveg.auth.FunctionType;
 
 /**
  * @auther zbb

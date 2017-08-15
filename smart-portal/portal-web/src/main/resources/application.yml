@@ -3,15 +3,8 @@ application:
 spring:
   profiles:
     active: @service.env@ #取配置文件
-
-  token:
-    expire: @token.expire@
-    refresh-expire: @token.refresh-expire@
-    secert: @token.secert@
-    issuer: @token.issuer@
-
   dubbox:
-    scan: com.ybveg.govx.web
+    scan: com.ybveg.govx.controller
     registry:
       protocol: zookeeper
       address: zookeeper://192.168.1.8:2181
@@ -23,4 +16,11 @@ spring:
     application:
       name: prota-web@project.version@
       owner: zhangbinbin
-
+auth:
+  module:
+    scan: com.ybveg.govx.controller
+  token:
+    expire: @token.expire@
+    refresh-expire: @token.refresh-expire@
+    secert: @token.secert@
+    issuer: @token.issuer@

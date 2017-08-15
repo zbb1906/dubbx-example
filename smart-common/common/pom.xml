@@ -17,6 +17,11 @@
       <artifactId>spring-boot-starter-dubbox</artifactId>
       <scope>provided</scope>
     </dependency>
+
+    <dependency>
+      <groupId>com.ybveg</groupId>
+      <artifactId>auth-core</artifactId>
+    </dependency>
   </dependencies>
 
 </project>

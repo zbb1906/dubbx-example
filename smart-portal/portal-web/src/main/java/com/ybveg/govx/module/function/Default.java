@@ -1,6 +1,6 @@
 package com.ybveg.govx.module.function;
 
-import com.ybveg.govx.mvc.auth.FunctionType;
+import com.ybveg.auth.FunctionType;
 
 /**
  * 每个模块都有一个默认功能

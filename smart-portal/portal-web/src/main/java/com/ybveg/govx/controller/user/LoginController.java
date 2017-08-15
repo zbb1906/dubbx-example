@@ -2,13 +2,13 @@ package com.ybveg.govx.controller.user;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSON;
+import com.ybveg.auth.AuthManager;
+import com.ybveg.auth.token.Token;
 import com.ybveg.govx.mvc.BaseController;
 import com.ybveg.govx.mvc.R;
 import com.ybveg.govx.mvc.SessionModel;
 import com.ybveg.govx.system.api.UserService;
 import com.ybveg.govx.system.model.dto.UserDto;
-import com.ybveg.jwt.token.Token;
-import com.ybveg.jwt.token.TokenFactory;
 import java.util.Date;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,10 +31,10 @@ public class LoginController extends BaseController {
   private UserService userService;
 
   @Autowired
-  private TokenFactory factory;
+  private AuthManager manager;
 
   @PostMapping("login")
-  public R login(String login, String password) {
+  public R login(String username, String password) {
     SessionModel session = new SessionModel();
     session.setAreaCode("510108");
     session.setDpCode("510108");
@@ -43,7 +43,7 @@ public class LoginController extends BaseController {
     session.setRealname("章彬彬");
     session.setUsername("zhangbinbin");
     session.setType("1");
-    Token token = factory.createAccessToken(session.getId(), session);
+    Token token = manager.createAccessToken(session.getId(), session);
     UserDto user = userService.findUser("123");
     log.info(JSON.toJSONString(user));
     return R.ok(token);

@@ -1,6 +1,6 @@
 package com.ybveg.govx.module;
 
-import com.ybveg.govx.mvc.auth.ModuleType;
+import com.ybveg.auth.ModuleType;
 
 /**
  * 系统模块管理
