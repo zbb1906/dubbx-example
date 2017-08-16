@@ -1,6 +1,7 @@
 package com.ybveg.govx.controller.admin;
 
 import com.ybveg.govx.mvc.R;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,6 +21,11 @@ public class DeptController {
 
   @RequestMapping("update")
   public R update() {
+    return null;
+  }
+
+  @PostMapping("page/{pageSize}/{pageNum}")
+  public R list() {
     return null;
   }
 

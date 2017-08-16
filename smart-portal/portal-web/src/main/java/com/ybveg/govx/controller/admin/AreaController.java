@@ -10,29 +10,28 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("admin/area")
 public class AreaController {
 
-  @RequestMapping("add")
-  public Object add() {
-    return "";
-  }
+    @RequestMapping("add")
+    public Object add() {
+        return "";
+    }
 
-  @RequestMapping("delete")
-  public Object delete() {
-    return "";
-  }
+    @RequestMapping("delete")
+    public Object delete() {
+        return "";
+    }
 
-  @RequestMapping("update")
-  public Object update() {
-    return "";
-  }
+    @RequestMapping("update")
+    public Object update() {
+        return "";
+    }
 
-  @PostMapping("page/{pageSize}/{pageNum}")
-  public R list(){
+    @PostMapping("page/{pageSize}/{pageNum}")
+    public R list() {
+        return null;
+    }
 
-    return null;
-  }
-
-  @RequestMapping("search")
-  public Object search() {
-    return "";
-  }
+    @RequestMapping("search")
+    public Object search() {
+        return "";
+    }
 }
