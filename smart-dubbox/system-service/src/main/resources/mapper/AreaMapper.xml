@@ -14,7 +14,7 @@
     <result column="town_code" jdbcType="VARCHAR" property="townCode"/>
     <result column="village_code" jdbcType="VARCHAR" property="villageCode"/>
   </resultMap>
-  <select id="list" resultType="HashMap">
+  <select id="list" resultType="java.util.Map">
     SELECT * FROM sys_area
   </select>
 </mapper>
