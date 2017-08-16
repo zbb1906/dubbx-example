@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Bean;
 // 不启动 AuthAutoConfiguration 引入进来主要是dubbo 要多实体类序列化
 @Slf4j
 @SpringBootApplication(exclude = AuthAutoConfiguration.class)
-
 public class SystemStartup {
 
   public static void main(String[] args) throws InterruptedException {

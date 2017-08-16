@@ -12,13 +12,11 @@ import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.ConvertUtils;
 import org.apache.commons.beanutils.locale.converters.DateLocaleConverter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 /**
  * Created by Administrator on 2017/8/15.
  */
 
-@Component
 @Service(version = "1.0")
 public class RoleServiceImpl implements RoleService {
 

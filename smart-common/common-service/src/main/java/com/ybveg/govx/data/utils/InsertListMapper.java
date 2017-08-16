@@ -1,4 +1,4 @@
-package com.ybveg.govx.data.mapper;
+package com.ybveg.govx.data.utils;
 
 import java.util.List;
 import org.apache.ibatis.annotations.InsertProvider;
