@@ -7,6 +7,7 @@ import com.ybveg.govx.mvc.SessionModel;
 import java.lang.annotation.Annotation;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -23,6 +24,9 @@ public class AuthorizationInterceptor extends HandlerInterceptorAdapter {
     // 如果不是映射到方法直接通过
 
     if (!(handler instanceof HandlerMethod)) {
+      if (RequestMethod.OPTIONS.name().equals(request.getMethod())) {  //如果是options 请求
+        response.setStatus(204);
+      }
       return true;
     }
     HandlerMethod handlerMethod = (HandlerMethod) handler;

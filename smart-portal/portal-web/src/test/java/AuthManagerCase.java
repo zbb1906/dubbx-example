@@ -1,5 +1,6 @@
 import com.ybveg.auth.AuthManager;
 import com.ybveg.govx.PortalWebStartup;
+import java.io.IOException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class AuthManagerCase {
   AuthManager manager;
 
   @Test
-  public void scan() {
+  public void scan() throws IOException {
     manager.scan();
   }
 }
