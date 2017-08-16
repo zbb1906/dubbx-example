@@ -29,9 +29,9 @@ public class WebMvcConfiguration extends WebMvcConfigurerAdapter {
   @Autowired
   private CorsProperties cors;
 
-  @Autowired
-  @SuppressWarnings("SpringJavaAutowiringInspection")
-  private AuthAbstractManager manager;  //权限
+//  @Autowired
+//  @SuppressWarnings("SpringJavaAutowiringInspection")
+//  private AuthAbstractManager manager;  //权限
 
   /**
    * 利用fastjson替换掉jackson，且解决中文乱码问题
@@ -66,12 +66,12 @@ public class WebMvcConfiguration extends WebMvcConfigurerAdapter {
         .allowCredentials(false).maxAge(3600);
   }
 
-  @Override
-  public void addInterceptors(InterceptorRegistry registry) {
-    AuthorizationInterceptor interceptor = new AuthorizationInterceptor(manager);
-
-    registry.addInterceptor(interceptor).addPathPatterns("/**")
-        .excludePathPatterns("/login", "/error", "/reset");
-    super.addInterceptors(registry);
-  }
+//  @Override
+//  public void addInterceptors(InterceptorRegistry registry) {
+////    AuthorizationInterceptor interceptor = new AuthorizationInterceptor(manager);
+//
+//    registry.addInterceptor(interceptor).addPathPatterns("/**")
+//        .excludePathPatterns("/login", "/error", "/reset");
+//    super.addInterceptors(registry);
+//  }
 }

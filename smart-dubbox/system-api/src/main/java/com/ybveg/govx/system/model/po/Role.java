@@ -1,5 +1,7 @@
 package com.ybveg.govx.system.model.po;
 
+import com.github.tj123.common.BasePo;
+import com.ybveg.govx.system.model.dto.RoleDto;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Id;
@@ -10,7 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name = "sys_role")
-public class Role implements Serializable {
+public class Role extends BasePo<RoleDto> implements Serializable {
 
   private static final long serialVersionUID = 1L;
 

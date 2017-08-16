@@ -17,7 +17,12 @@
       <groupId>javax.persistence</groupId>
       <artifactId>persistence-api</artifactId>
     </dependency>
-    
+
+    <dependency>
+      <groupId>com.shundian.lib</groupId>
+      <artifactId>common-bean</artifactId>
+    </dependency>
+
   </dependencies>
 
 
