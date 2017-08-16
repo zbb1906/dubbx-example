@@ -20,30 +20,92 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
         <!--todo 生成Model类存放位置-->
-      <javaModelGenerator targetPackage="com.ybveg.govx.system.model.po"
+    <javaModelGenerator targetPackage="com.ybveg.govx.system.model.po.admin"
         targetProject="F:\job\ideaWorkSpace\smartGov\smart-govx\smart-dubbox\system-api\src\main\java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <!--todo 生成映射文件存放位置-->
-      <sqlMapGenerator targetPackage="mapper"
+    <sqlMapGenerator targetPackage="mapper.admin"
         targetProject="F:\job\ideaWorkSpace\smartGov\smart-govx\smart-dubbox\system-service\src\main\resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
         <!--todo 生成DaoMapper类存放位置-->
-      <javaClientGenerator targetPackage="com.ybveg.govx.system.dao"
+    <javaClientGenerator targetPackage="com.ybveg.govx.system.dao.sys"
         targetProject="F:\job\ideaWorkSpace\smartGov\smart-govx\smart-dubbox\system-service\src\main\java"
         type="XMLMAPPER">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
-        <!--todo 生成对应表及类名,需要记住的一点是逆向工程无法生成关联关系,只能生成单表操作-->
+
+
+    <!--todo 生成对应表及类名,需要记住的一点是逆向工程无法生成关联关系,只能生成单表操作-->
+    <table domainObjectName="Area" enableCountByExample="false"
+      enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"
+      selectByExampleQueryId="false" tableName="sys_area">
+      <!-- 指定是否只生成domain类，如果设置为true，只生成domain类，如果还配置了sqlMapGenerator，那么在mapper XML文件中，只生成resultMap元素 -->
+      <property name="sqlMapGenerator" value="true"/>
+    </table>
+    <table domainObjectName="Department" enableCountByExample="false"
+      enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"
+      selectByExampleQueryId="false" tableName="sys_dept">
+      <!-- 指定是否只生成domain类，如果设置为true，只生成domain类，如果还配置了sqlMapGenerator，那么在mapper XML文件中，只生成resultMap元素 -->
+      <property name="sqlMapGenerator" value="true"/>
+    </table>
+    <table domainObjectName="Menu" enableCountByExample="false"
+      enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"
+      selectByExampleQueryId="false" tableName="sys_menu">
+      <!-- 指定是否只生成domain类，如果设置为true，只生成domain类，如果还配置了sqlMapGenerator，那么在mapper XML文件中，只生成resultMap元素 -->
+      <property name="sqlMapGenerator" value="true"/>
+    </table>
+    <table domainObjectName="MenuModule" enableCountByExample="false"
+      enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"
+      selectByExampleQueryId="false" tableName="sys_menu_module">
+      <!-- 指定是否只生成domain类，如果设置为true，只生成domain类，如果还配置了sqlMapGenerator，那么在mapper XML文件中，只生成resultMap元素 -->
+      <property name="sqlMapGenerator" value="true"/>
+    </table>
+
+    <table domainObjectName="ModuleFunction" enableCountByExample="false"
+      enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"
+      selectByExampleQueryId="false" tableName="sys_module_func">
+      <!-- 指定是否只生成domain类，如果设置为true，只生成domain类，如果还配置了sqlMapGenerator，那么在mapper XML文件中，只生成resultMap元素 -->
+      <property name="sqlMapGenerator" value="true"/>
+    </table>
+
+    <table domainObjectName="Module" enableCountByExample="false"
+      enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"
+      selectByExampleQueryId="false" tableName="sys_module">
+      <!-- 指定是否只生成domain类，如果设置为true，只生成domain类，如果还配置了sqlMapGenerator，那么在mapper XML文件中，只生成resultMap元素 -->
+      <property name="sqlMapGenerator" value="true"/>
+    </table>
+
+    <table domainObjectName="Role" enableCountByExample="false"
+      enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"
+      selectByExampleQueryId="false" tableName="sys_role">
+      <!-- 指定是否只生成domain类，如果设置为true，只生成domain类，如果还配置了sqlMapGenerator，那么在mapper XML文件中，只生成resultMap元素 -->
+      <property name="sqlMapGenerator" value="true"/>
+    </table>
+
+    <table domainObjectName="RoleModuleFunction" enableCountByExample="false"
+      enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"
+      selectByExampleQueryId="false" tableName="sys_role_module_func">
+      <!-- 指定是否只生成domain类，如果设置为true，只生成domain类，如果还配置了sqlMapGenerator，那么在mapper XML文件中，只生成resultMap元素 -->
+      <property name="sqlMapGenerator" value="true"/>
+    </table>
+
     <table domainObjectName="User" enableCountByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"
       selectByExampleQueryId="false" tableName="sys_user">
         <!-- 指定是否只生成domain类，如果设置为true，只生成domain类，如果还配置了sqlMapGenerator，那么在mapper XML文件中，只生成resultMap元素 -->
         <property name="sqlMapGenerator" value="true"/>
       </table>
+
+    <table domainObjectName="UserRole" enableCountByExample="false"
+      enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"
+      selectByExampleQueryId="false" tableName="sys_user_role">
+      <!-- 指定是否只生成domain类，如果设置为true，只生成domain类，如果还配置了sqlMapGenerator，那么在mapper XML文件中，只生成resultMap元素 -->
+      <property name="sqlMapGenerator" value="true"/>
+    </table>
 
     </context>
 </generatorConfiguration>

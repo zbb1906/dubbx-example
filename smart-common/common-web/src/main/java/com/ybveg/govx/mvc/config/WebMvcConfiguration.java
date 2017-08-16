@@ -1,12 +1,10 @@
 package com.ybveg.govx.mvc.config;
 
-import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
+import com.ybveg.auth.AuthAbstractManager;
 import com.ybveg.govx.mvc.interceptor.AuthorizationInterceptor;
-import com.ybveg.govx.system.api.UserService;
-import com.ybveg.jwt.token.TokenFactory;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,26 +30,12 @@ public class WebMvcConfiguration extends WebMvcConfigurerAdapter {
   private CorsProperties cors;
 
   @Autowired
-  private TokenFactory factory;
-
-  @Reference
-  private UserService userService;  //注入用户服务类 便于获取权限信息
+  @SuppressWarnings("SpringJavaAutowiringInspection")
+  private AuthAbstractManager manager;  //权限
 
   /**
    * 利用fastjson替换掉jackson，且解决中文乱码问题
    */
-//  @Override
-//  public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
-//    FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
-//    FastJsonConfig fastJsonConfig = new FastJsonConfig();
-//    fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
-//    //处理中文乱码问题
-//    List<MediaType> fastMediaTypes = new ArrayList<>();
-//    fastMediaTypes.add(MediaType.APPLICATION_JSON_UTF8);
-//    fastConverter.setSupportedMediaTypes(fastMediaTypes);
-//    fastConverter.setFastJsonConfig(fastJsonConfig);
-//    converters.add(fastConverter);
-//  }
   @Bean
   public HttpMessageConverters fastJsonHttpMessageConverters() {
     FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
@@ -84,7 +68,7 @@ public class WebMvcConfiguration extends WebMvcConfigurerAdapter {
 
   @Override
   public void addInterceptors(InterceptorRegistry registry) {
-    AuthorizationInterceptor interceptor = new AuthorizationInterceptor(factory, userService);
+    AuthorizationInterceptor interceptor = new AuthorizationInterceptor(manager);
 
     registry.addInterceptor(interceptor).addPathPatterns("/**")
         .excludePathPatterns("/login", "/error", "/reset");

@@ -1,5 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.ybveg.govx</groupId>
@@ -51,8 +51,6 @@
     <token.secert>p1OuR6dGrxWnIe1BJ3x3IOftxCoh6nby</token.secert>
     <token.issuer>http://www.ybveg.com</token.issuer>
 
-    <!-- service 扫描目录 多个,分开 -->
-    <service.scan>com.ybveg.govx</service.scan>
 
     <!-- 开源项目 properties  -->
     <spring.version>4.3.10.RELEASE</spring.version>
@@ -65,6 +63,7 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
+      <version>1.16.18</version>
       <scope>provided</scope>
     </dependency>
 
@@ -119,9 +118,22 @@
     <dependencies>
 
       <dependency>
+        <groupId>javax.persistence</groupId>
+        <artifactId>persistence-api</artifactId>
+        <version>1.0.2</version>
+      </dependency>
+
+      <dependency>
         <groupId>com.ybveg</groupId>
-        <artifactId>jwt-token</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <artifactId>auth-core</artifactId>
+        <version>0.0.1</version>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils -->
+      <dependency>
+        <groupId>commons-beanutils</groupId>
+        <artifactId>commons-beanutils</artifactId>
+        <version>1.9.3</version>
       </dependency>
 
       <dependency>
@@ -132,7 +144,7 @@
       <dependency>
         <groupId>com.ybveg.dubbox</groupId>
         <artifactId>spring-boot-starter-dubbox</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.1</version>
       </dependency>
 
       <!-- dubbox kryo 序列化 -->

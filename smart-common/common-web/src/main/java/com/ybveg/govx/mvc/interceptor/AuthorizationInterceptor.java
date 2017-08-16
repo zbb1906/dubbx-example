@@ -1,10 +1,9 @@
 package com.ybveg.govx.mvc.interceptor;
 
+import com.ybveg.auth.AuthAbstractManager;
+import com.ybveg.auth.FreeLogin;
+import com.ybveg.auth.token.Token;
 import com.ybveg.govx.mvc.SessionModel;
-import com.ybveg.govx.mvc.auth.FreeLogin;
-import com.ybveg.govx.system.api.UserService;
-import com.ybveg.jwt.token.Token;
-import com.ybveg.jwt.token.TokenFactory;
 import java.lang.annotation.Annotation;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,13 +12,10 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 public class AuthorizationInterceptor extends HandlerInterceptorAdapter {
 
-  private TokenFactory factory;
+  private AuthAbstractManager manager;
 
-  private UserService userService;
-
-  public AuthorizationInterceptor(TokenFactory factory, UserService userService) {
-    this.factory = factory;
-    this.userService = userService;
+  public AuthorizationInterceptor(AuthAbstractManager manager) {
+    this.manager = manager;
   }
 
   public boolean preHandle(HttpServletRequest request,
@@ -37,7 +33,7 @@ public class AuthorizationInterceptor extends HandlerInterceptorAdapter {
     }
 
     String rawToken = request.getHeader(Token.TOKEN_NAME);
-    Token token = factory.parseToken(rawToken);
+    Token token = manager.parseToken(rawToken);
     if (token.isRefresh()) {  //如果更新了Token
       response.setHeader(Token.TOKEN_NAME, token.getToken());
     }

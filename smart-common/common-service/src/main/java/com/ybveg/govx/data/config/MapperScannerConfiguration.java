@@ -22,16 +22,15 @@ public class MapperScannerConfiguration {
     MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
     mapperScannerConfigurer.setSqlSessionFactoryBeanName("sqlSessionFactory");
     //mapperScannerConfigurer.setBasePackage("tk.mybatis.springboot.mapper");
-    mapperScannerConfigurer.setBasePackage("com.ybveg.govx.**.dao");
+    mapperScannerConfigurer.setBasePackage("com.ybveg.govx.**.mapper.**");
     mapperScannerConfigurer.getMapperHelper().getConfig().setOrder("BEFORE");  //回写uuid配置
     Properties properties = new Properties();
 
-    properties.setProperty("mappers", "com.ybveg.govx.data.mapper.BaseMapper");
+    properties.setProperty("mappers", "com.ybveg.govx.data.utils.BaseMapper");
 
     properties.setProperty("notEmpty", "false");
     properties.setProperty("IDENTITY", "MYSQL");
     mapperScannerConfigurer.setProperties(properties);
     return mapperScannerConfigurer;
   }
-
 }

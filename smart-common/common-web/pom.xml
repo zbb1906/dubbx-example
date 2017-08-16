@@ -41,11 +41,6 @@
       <groupId>com.ybveg.dubbox</groupId>
       <artifactId>spring-boot-starter-dubbox</artifactId>
     </dependency>
-    <dependency>
-      <groupId>com.ybveg.govx</groupId>
-      <artifactId>common</artifactId>
-      <version>${project.version}</version>
-    </dependency>
 
     <!--  kryo 序列化  -->
     <dependency>
@@ -57,10 +52,6 @@
       <artifactId>kryo-serializers</artifactId>
     </dependency>
 
-    <dependency>
-      <groupId>com.ybveg</groupId>
-      <artifactId>jwt-token</artifactId>
-    </dependency>
 
     <!-- 分页结果返回 -->
     <dependency>
@@ -70,7 +61,7 @@
 
     <dependency>
       <groupId>com.ybveg.govx</groupId>
-      <artifactId>system-api</artifactId>
+      <artifactId>common</artifactId>
       <version>${project.version}</version>
     </dependency>
 

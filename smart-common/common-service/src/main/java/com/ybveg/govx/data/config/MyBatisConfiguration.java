@@ -37,7 +37,7 @@ public class MyBatisConfiguration implements TransactionManagementConfigurer {
   public SqlSessionFactory sqlSessionFactoryBean() {
     SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
     bean.setDataSource(dataSource);
-    bean.setTypeAliasesPackage("com.ybveg.govx.dto");
+    bean.setTypeAliasesPackage("com.ybveg.govx.**.model");
 
     //分页插件
     PageHelper pageHelper = new PageHelper();
@@ -54,7 +54,7 @@ public class MyBatisConfiguration implements TransactionManagementConfigurer {
     //添加XML目录
     ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
     try {
-      bean.setMapperLocations(resolver.getResources("classpath:mapper/*.xml"));
+      bean.setMapperLocations(resolver.getResources("classpath:mapper/**/*.xml"));
       return bean.getObject();
     } catch (Exception e) {
       log.error("Mybatis ResourcePatternResolver error", e);
