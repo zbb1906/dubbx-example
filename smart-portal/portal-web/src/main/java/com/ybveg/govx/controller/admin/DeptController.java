@@ -1,30 +1,31 @@
 package com.ybveg.govx.controller.admin;
 
+import com.ybveg.govx.mvc.R;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("sys/dept")
+@RequestMapping("admin/dept")
 public class DeptController {
 
   @RequestMapping("add")
-  public Object add() {
-    return "";
+  public R add() {
+    return null;
   }
 
   @RequestMapping("delete")
-  public Object delete() {
-    return "";
+  public R delete() {
+    return null;
   }
 
   @RequestMapping("update")
-  public Object update() {
-    return "";
+  public R update() {
+    return null;
   }
 
   @RequestMapping("search")
-  public Object search() {
-    return "";
+  public R search() {
+    return null;
   }
 
 }
