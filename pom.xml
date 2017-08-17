@@ -137,7 +137,7 @@
       <dependency>
         <groupId>com.ybveg.dubbox</groupId>
         <artifactId>spring-boot-starter-dubbox</artifactId>
-        <version>0.0.1</version>
+        <version>1.0.0</version>
       </dependency>
 
       <!-- dubbox kryo 序列化 -->
