@@ -52,7 +52,8 @@ public class ModuleController extends BaseController {
   @Function(value = Add.class, relation = {
       @Relation(module = MenuModule.class, func = Add.class),
       @Relation(module = MenuModule.class, func = Add.class)})
-  public R pageMoudle(@RequestBody Map<String, Object> params, int pageSize, int pageNum) {
-    return R.ok();
+  public R pageMoudle(@RequestBody Map<String, Object> params, int pageSize, int pageNum)
+      throws Exception {
+    return R.ok(service.listForPage(pageNum, pageSize));
   }
 }
