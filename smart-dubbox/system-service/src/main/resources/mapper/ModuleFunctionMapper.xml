@@ -9,47 +9,5 @@
     <result column="clazz" jdbcType="VARCHAR" property="clazz"/>
     <result column="name" jdbcType="VARCHAR" property="name"/>
   </resultMap>
-  <insert id="insert" parameterType="com.ybveg.govx.system.model.po.ModuleFunction">
-    insert into sys_module_func (id, module_id, func_code,
-    clazz, name)
-    values (#{id,jdbcType=VARCHAR}, #{moduleId,jdbcType=VARCHAR}, #{funcCode,jdbcType=VARCHAR},
-    #{clazz,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="com.ybveg.govx.system.model.po.ModuleFunction">
-    insert into sys_module_func
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="moduleId != null">
-        module_id,
-      </if>
-      <if test="funcCode != null">
-        func_code,
-      </if>
-      <if test="clazz != null">
-        clazz,
-      </if>
-      <if test="name != null">
-        name,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=VARCHAR},
-      </if>
-      <if test="moduleId != null">
-        #{moduleId,jdbcType=VARCHAR},
-      </if>
-      <if test="funcCode != null">
-        #{funcCode,jdbcType=VARCHAR},
-      </if>
-      <if test="clazz != null">
-        #{clazz,jdbcType=VARCHAR},
-      </if>
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
+
 </mapper>
