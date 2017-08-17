@@ -2,9 +2,9 @@ package com.ybveg.govx.system.model.po;
 
 
 import com.github.tj123.common.BasePo;
-import com.ybveg.govx.system.model.dto.MenuModuleDto;
 import com.ybveg.govx.system.model.dto.ModuleFunctionDto;
 import java.io.Serializable;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.Getter;
@@ -18,6 +18,7 @@ public class ModuleFunction extends BasePo<ModuleFunctionDto> implements Seriali
   private static final long serialVersionUID = 1L;
 
   @Id
+  @GeneratedValue(generator = "UUID")
   private String id;
 
   private String moduleCode;

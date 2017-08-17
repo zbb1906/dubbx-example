@@ -4,23 +4,25 @@ spring:
   profiles:
     active: @service.env@ #取配置文件
   dubbox:
-    scan: com.ybveg.govx.controller
-    registry:
-      protocol: zookeeper
-      address: zookeeper://192.168.1.8:2181
-      client: curator
+    scan: com.ybveg.govx.controller  # dubbox 注解扫描包地址
     protocols:
       - name: dubbo
         serialization: kryo
-        optimizer: com.ybveg.govx.serialize.SerializationOptimizerImpl
+        optimizer: com.ybveg.dubbox.serialize.SerializationOptimizerImpl
     application:
       name: prota-web@project.version@
       owner: zhangbinbin
+    serialize:
+      scan: com.ybveg.govx.**.model
+      classes:
+        - com.ybveg.auth.model.FunctionModel
+        - com.ybveg.auth.model.ModuleModel
+
 auth:
   module:
     scan: com.ybveg.govx.controller
   token:
-    expire: @token.expire@
-    refresh-expire: @token.refresh-expire@
+    expire: 60
+    refresh-expire: 60
     secert: @token.secert@
     issuer: @token.issuer@

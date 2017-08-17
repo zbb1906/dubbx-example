@@ -1,13 +1,14 @@
 package com.ybveg.govx.controller.admin;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.sun.org.apache.bcel.internal.generic.RETURN;
 import com.ybveg.govx.mvc.R;
 import com.ybveg.govx.system.api.AreaService;
 import com.ybveg.govx.system.model.dto.AreaDto;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.Map;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * create by KLJ on 2017-08-16 16:34:35

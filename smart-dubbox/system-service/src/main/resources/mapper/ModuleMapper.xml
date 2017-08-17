@@ -20,4 +20,12 @@
     ORDER BY create_time
   </select>
 
+  <insert id="saveOrUpdate">
+    <selectKey keyProperty="count" resultType="int" order="BEFORE">
+      select count(*) from country where id = #{id}
+    </selectKey>
+
+
+  </insert>
+
 </mapper>

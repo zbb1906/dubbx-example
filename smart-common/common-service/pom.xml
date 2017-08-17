@@ -29,12 +29,6 @@
       <artifactId>spring-boot-starter-dubbox</artifactId>
     </dependency>
 
-    <!--使用Spring-logging 配置-->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-logging</artifactId>
-    </dependency>
-
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-configuration-processor</artifactId>

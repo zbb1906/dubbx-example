@@ -14,6 +14,8 @@ import lombok.Setter;
 @Getter
 public class R implements Serializable {
 
+  private static final long serialVersionUID = 6067576366978208121L;
+
   private boolean status;
 
   private Object data;

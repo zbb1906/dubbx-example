@@ -15,7 +15,12 @@ spring:
     protocols:    #使用dubbo协议
       - name: dubbo
         serialization: kryo
-        optimizer: com.ybveg.govx.serialize.SerializationOptimizerImpl
+        optimizer: com.ybveg.dubbox.serialize.SerializationOptimizerImpl
     application:
-      name: system-service@project.version@
+      name: prota-web@project.version@
       owner: zhangbinbin
+    serialize:    #序列化配置
+      scan: com.ybveg.govx.**.model
+      classes:
+        - com.ybveg.auth.model.FunctionModel
+        - com.ybveg.auth.model.ModuleModel

@@ -45,9 +45,7 @@
 
 
   <properties>
-    <!-- token 参数配置 -->
-    <token.expire>60</token.expire> <!-- token 有效时间  -->
-    <token.refresh-expire>30</token.refresh-expire> <!-- token 可用时间 -->
+
     <token.secert>p1OuR6dGrxWnIe1BJ3x3IOftxCoh6nby</token.secert>
     <token.issuer>http://www.ybveg.com</token.issuer>
 

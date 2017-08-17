@@ -27,6 +27,11 @@
       <groupId>com.github.pagehelper</groupId>
       <artifactId>pagehelper</artifactId>
     </dependency>
+
+    <dependency>
+      <groupId>com.ybveg</groupId>
+      <artifactId>auth-core</artifactId>
+    </dependency>
   </dependencies>
 
 

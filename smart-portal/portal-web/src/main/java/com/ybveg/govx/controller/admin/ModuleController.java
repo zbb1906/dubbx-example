@@ -17,7 +17,9 @@ import com.ybveg.govx.system.api.ModuleFunctionService;
 import com.ybveg.govx.system.api.ModuleService;
 import com.ybveg.govx.system.model.dto.ModuleFunctionDto;
 import com.ybveg.govx.system.model.po.ModuleFunction;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -44,10 +46,10 @@ public class ModuleController extends BaseController {
   @PostMapping("scan")
   @Function(Scan.class)
   public R scan() {
-    Collection<ModuleModel> list = manager.scan();
-    String json = JSON.toJSONString(list, SerializerFeature.PrettyFormat,
-        SerializerFeature.DisableCircularReferenceDetect);
-    return R.ok(JSON.parse(json));
+    List<ModuleModel> list = new ArrayList<>();
+    list.addAll(manager.scan());
+    service.saveOrUpdate(list);
+    return R.ok();
   }
 
   @GetMapping("page")

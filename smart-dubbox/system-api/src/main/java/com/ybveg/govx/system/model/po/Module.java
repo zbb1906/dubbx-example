@@ -4,6 +4,7 @@ import com.github.tj123.common.BasePo;
 import com.ybveg.govx.system.model.dto.ModuleDto;
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +16,7 @@ public class Module extends BasePo<ModuleDto> implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
+  @Id
   private String moduleCode;
 
   private String clazz;
