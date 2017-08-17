@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * Created by hb on 2017/8/15.
  */
 
-@Service(version = "1.0")
+@Service(version = "1.0.0")
 public class ModuleServiceImpl implements ModuleService {
 
   @Autowired

@@ -6,11 +6,13 @@ import com.ybveg.govx.system.model.dto.MenuModuleDto;
 import com.ybveg.govx.system.model.dto.ModuleFunctionDto;
 import java.io.Serializable;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@Table(name = "sys_module_func")
 public class ModuleFunction extends BasePo<ModuleFunctionDto> implements Serializable {
 
   private static final long serialVersionUID = 1L;
