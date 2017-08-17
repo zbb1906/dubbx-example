@@ -1,19 +1,14 @@
-package com.ybveg.govx.system.model.po;
+package com.ybveg.govx.system.model.dto;
 
-import com.github.tj123.common.BasePo;
-import com.ybveg.govx.system.model.dto.AreaDto;
+import com.github.tj123.common.BaseDto;
+import com.ybveg.govx.system.model.po.Area;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 @Getter
 @Setter
-@Table(name = "sys_area")
-public class Area extends BasePo<AreaDto> {
+public class AreaDto extends BaseDto<Area> {
 
-  @Id
   private String areaCode;
 
   private String areaName;

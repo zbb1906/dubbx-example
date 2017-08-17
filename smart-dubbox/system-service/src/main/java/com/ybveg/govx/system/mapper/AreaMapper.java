@@ -1,10 +1,13 @@
 package com.ybveg.govx.system.mapper;
 
 import com.ybveg.govx.system.model.po.Area;
+import tk.mybatis.mapper.common.Mapper;
 
-public interface AreaMapper {
+import java.util.List;
+import java.util.Map;
 
-  int insert(Area record);
+public interface AreaMapper extends Mapper<Area> {
 
-  int insertSelective(Area record);
+    public List<Map<String,Object>> list() throws  Exception;
+
 }

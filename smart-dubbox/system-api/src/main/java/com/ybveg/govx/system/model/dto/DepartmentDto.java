@@ -1,21 +1,16 @@
-package com.ybveg.govx.system.model.po;
+package com.ybveg.govx.system.model.dto;
 
 import com.github.tj123.common.BaseDto;
-import com.github.tj123.common.BasePo;
-import com.ybveg.govx.system.model.dto.DepartmentDto;
+import com.ybveg.govx.system.model.po.Department;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Id;
-import javax.persistence.Table;
 import java.util.Date;
 
 @Getter
 @Setter
-@Table(name = "sys_dept")
-public class Department extends BasePo<DepartmentDto> {
+public class DepartmentDto extends BaseDto<Department>{
 
-  @Id
   private String id;
 
   private String deptType;

@@ -1,14 +1,21 @@
 package com.ybveg.govx.controller.admin;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.ybveg.govx.mvc.R;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.ybveg.govx.system.api.AreaService;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
+/**
+ * create by KLJ on 2017-08-16 16:34:35
+ */
 @RestController
 @RequestMapping("admin/area")
 public class AreaController {
+
+    @Reference
+    AreaService service;
 
     @RequestMapping("add")
     public Object add() {
@@ -25,9 +32,10 @@ public class AreaController {
         return "";
     }
 
-    @PostMapping("page/{pageSize}/{pageNum}")
-    public R list() {
-        return null;
+    @PostMapping("page/{size}/{num}")
+    public R list(@RequestBody Map<String, Object> params, int size, int num) {
+
+        return R.ok();
     }
 
     @RequestMapping("search")
