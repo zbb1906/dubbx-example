@@ -16,6 +16,8 @@ public class MenuDto extends BaseDto<Menu> implements Serializable {
 
   private String id;
 
+  private String parentId;
+
   private String name;
 
   private Integer level;
