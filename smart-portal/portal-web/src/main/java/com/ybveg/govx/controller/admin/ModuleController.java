@@ -4,6 +4,7 @@ package com.ybveg.govx.controller.admin;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.ybveg.auth.AuthManager;
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.ybveg.auth.Function;
 import com.ybveg.auth.Module;
 import com.ybveg.auth.Relation;
@@ -15,8 +16,10 @@ import com.ybveg.govx.module.function.Scan;
 import com.ybveg.govx.mvc.BaseController;
 import com.ybveg.govx.mvc.R;
 import java.util.Collection;
+import com.ybveg.govx.system.api.ModuleService;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,6 +36,9 @@ public class ModuleController extends BaseController {
   @Autowired
   private AuthManager manager;
 
+  @Reference(version = "1.0")
+  private ModuleService service;
+
   @PostMapping("scan")
   @Function(Scan.class)
   public R scan() {
@@ -46,7 +52,8 @@ public class ModuleController extends BaseController {
   @Function(value = Add.class, relation = {
       @Relation(module = MenuModule.class, func = Add.class),
       @Relation(module = MenuModule.class, func = Add.class)})
-  public R pageMoudle(@RequestBody Map<String, Object> params, int pageSize, int pageNum) {
-    return R.ok();
+  public R pageMoudle(@RequestBody Map<String, Object> params, int pageSize, int pageNum)
+      throws Exception {
+    return R.ok(service.listForPage(pageNum, pageSize));
   }
 }

@@ -8,8 +8,8 @@ public interface RoleService {
   /**
    * 用户
    *
-   * @auther zbb
-   * @create 2017/8/2
+   * @auther hb
+   * @create 2017/8/14
    */
   void test() throws Exception;
 }
