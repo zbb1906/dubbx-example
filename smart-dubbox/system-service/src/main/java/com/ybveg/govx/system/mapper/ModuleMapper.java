@@ -9,5 +9,5 @@ import tk.mybatis.mapper.common.Mapper;
 
 public interface ModuleMapper extends Mapper<Module> {
 
-  List<Map<String, Object>> listForPage(@Param("page") Page page) throws Exception;
+  List<Map<String, Object>> listForPage() throws Exception;
 }

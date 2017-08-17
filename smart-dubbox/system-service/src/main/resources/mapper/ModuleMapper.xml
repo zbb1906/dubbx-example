@@ -16,7 +16,6 @@
   <select id="listForPage" parameterType="Integer" resultType="java.util.Map">
     SELECT * FROM sys_module
     ORDER BY create_time
-    LIMIT 3, 2
   </select>
 
 </mapper>

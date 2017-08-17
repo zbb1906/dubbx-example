@@ -31,4 +31,9 @@ public class AreaServiceImpl implements AreaService {
     public List<Map<String, Object>> list(Map<String, Object> params, int size, int num) throws Exception {
         return areaMapper.list();
     }
+
+    @Override
+    public boolean delete(String id) throws Exception {
+        return false;
+    }
 }

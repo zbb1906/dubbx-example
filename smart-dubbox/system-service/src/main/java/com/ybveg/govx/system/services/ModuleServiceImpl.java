@@ -3,6 +3,7 @@ package com.ybveg.govx.system.services;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.ybveg.govx.system.api.ModuleService;
 import com.ybveg.govx.system.mapper.ModuleMapper;
 import java.util.List;
@@ -20,13 +21,13 @@ public class ModuleServiceImpl implements ModuleService {
   ModuleMapper mapper;
 
   @Override
-  public List<Map<String, Object>> listForPage(int pageNum, int pageSize) throws Exception {
-    Page page = new Page();
-    page.setPageNum(pageNum);
-    page.setPageSize(pageSize);
-    PageHelper.startPage(page);
+  public PageInfo<Map<String, Object>> listForPage(int pageNum, int pageSize) throws Exception {
 
-    return mapper.listForPage(page);
+    PageHelper.startPage(pageNum, pageSize);
+    List<Map<String, Object>> list = mapper.listForPage();
+    PageInfo<Map<String, Object>> results = new PageInfo<>(list);
+
+    return results;
   }
 
 }

@@ -18,6 +18,6 @@ public class MenuModule extends BasePo<MenuModuleDto> implements Serializable {
   @Id
   private String menuId;
 
-  private String moduleId;
+  private String moduleCode;
 
 }
