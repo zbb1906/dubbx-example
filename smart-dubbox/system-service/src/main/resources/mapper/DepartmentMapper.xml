@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.ybveg.govx.system.mapper.DepartmentMapper">
-  <resultMap id="BaseResultMap" type="com.ybveg.govx.system.model.po.Department">
-    <result column="id" jdbcType="VARCHAR" property="id"/>
-    <result column="dept_type" jdbcType="VARCHAR" property="deptType"/>
-    <result column="dept_code" jdbcType="VARCHAR" property="deptCode"/>
-    <result column="dept_name" jdbcType="VARCHAR" property="deptName"/>
-    <result column="dept_admin" jdbcType="VARCHAR" property="deptAdmin"/>
-    <result column="area_code" jdbcType="VARCHAR" property="areaCode"/>
-    <result column="enable" jdbcType="VARCHAR" property="enable"/>
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
-  </resultMap>
+    <resultMap id="BaseResultMap" type="com.ybveg.govx.system.model.po.Department">
+        <result column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="dept_type" jdbcType="VARCHAR" property="deptType"/>
+        <result column="dept_code" jdbcType="VARCHAR" property="deptCode"/>
+        <result column="dept_name" jdbcType="VARCHAR" property="deptName"/>
+        <result column="dept_admin" jdbcType="VARCHAR" property="deptAdmin"/>
+        <result column="area_code" jdbcType="VARCHAR" property="areaCode"/>
+        <result column="enable" jdbcType="VARCHAR" property="enable"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+    </resultMap>
+
+    <select id="list" resultType="java.util.Map">
+    SELECT * FROM  sys_dept
+    </select>
+
 </mapper>

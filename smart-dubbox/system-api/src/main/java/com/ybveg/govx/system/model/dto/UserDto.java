@@ -1,20 +1,16 @@
-package com.ybveg.govx.system.model.po;
+package com.ybveg.govx.system.model.dto;
 
-import com.github.tj123.common.BasePo;
-import com.ybveg.govx.system.model.dto.UserDto;
+import com.github.tj123.common.BaseDto;
+import com.ybveg.govx.system.model.po.User;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Id;
-import javax.persistence.Table;
 import java.util.Date;
 
 @Getter
 @Setter
-@Table(name = "sys_user")
-public class User extends BasePo<UserDto>{
+public class UserDto extends BaseDto<User>{
 
-  @Id
   private String id;
 
   private String enable;
@@ -36,5 +32,4 @@ public class User extends BasePo<UserDto>{
   private Date createTime;
 
   private Date lastLoginTime;
-
 }

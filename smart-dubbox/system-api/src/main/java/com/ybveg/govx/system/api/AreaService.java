@@ -1,6 +1,8 @@
 package com.ybveg.govx.system.api;
 
+import com.github.pagehelper.PageInfo;
 import com.ybveg.govx.system.model.dto.AreaDto;
+import com.ybveg.govx.system.model.po.Area;
 
 import java.util.List;
 import java.util.Map;
@@ -26,7 +28,22 @@ public interface AreaService {
      * @return  返回查询的分页集合
      * @throws Exception
      */
-    public List<Map<String,Object>> list(Map<String,Object> params,int size,int num) throws Exception;
+    public PageInfo<Map<String,Object>> list(Map<String,Object> params, int size, int num) throws Exception;
 
-    public boolean delete(String id) throws Exception;
+    /**
+     * Created by KLJ on 2017-08-17 10:30:06
+     * @param code 删除区域的code
+     * @return
+     * @throws Exception
+     */
+    public boolean delete(String code) throws Exception;
+
+    /**
+     * 根据父Code查询集合
+     * Created by KLJ on 2017-08-17 10:45:30
+     * @param parentCode 父Code
+     * @return
+     * @throws Exception
+     */
+    public List<Area> listByParentCode(String parentCode) throws Exception;
 }
