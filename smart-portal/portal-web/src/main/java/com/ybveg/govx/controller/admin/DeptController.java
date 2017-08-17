@@ -1,6 +1,7 @@
 package com.ybveg.govx.controller.admin;
 
 import com.ybveg.govx.mvc.R;
+import com.ybveg.govx.system.model.dto.DepartmentDto;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,13 +14,14 @@ import java.util.Map;
 public class DeptController {
 
   @RequestMapping("add")
-  public R add() {
+  public R add(DepartmentDto dto) {
+
     return null;
   }
 
   @RequestMapping("delete")
-  public R delete() {
-    return null;
+  public R delete(String id) {
+    return R.ok();
   }
 
   @RequestMapping("update")

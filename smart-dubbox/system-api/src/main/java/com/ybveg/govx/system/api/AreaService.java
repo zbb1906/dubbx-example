@@ -27,4 +27,6 @@ public interface AreaService {
      * @throws Exception
      */
     public List<Map<String,Object>> list(Map<String,Object> params,int size,int num) throws Exception;
+
+    public boolean delete(String id) throws Exception;
 }
