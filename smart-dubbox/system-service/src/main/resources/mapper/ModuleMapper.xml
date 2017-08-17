@@ -3,7 +3,6 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.ybveg.govx.system.mapper.ModuleMapper">
   <resultMap id="BaseResultMap" type="com.ybveg.govx.system.model.po.Module">
-    <result column="id" jdbcType="VARCHAR" property="id"/>
     <result column="module_code" jdbcType="VARCHAR" property="moduleCode"/>
     <result column="clazz" jdbcType="VARCHAR" property="clazz"/>
     <result column="name" jdbcType="VARCHAR" property="name"/>
@@ -13,8 +12,10 @@
   <sql id="cToPForLfp">
 
   </sql>
-  <select id="listForPage" parameterType="Integer" resultType="java.util.Map">
-    SELECT * FROM sys_module
+  <select id="listForPage" resultType="java.util.Map">
+    SELECT sm.*, group_concat(IFNULL(smf.alias,smf.`name`))
+    FROM sys_module sm
+    JOIN sys_module_func smf on sm.module_code = smf.module_code
     ORDER BY create_time
   </select>
 

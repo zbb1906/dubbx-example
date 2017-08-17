@@ -15,6 +15,7 @@ import com.ybveg.govx.module.function.Add;
 import com.ybveg.govx.module.function.Scan;
 import com.ybveg.govx.mvc.BaseController;
 import com.ybveg.govx.mvc.R;
+import com.ybveg.govx.system.api.ModuleFunctionService;
 import java.util.Collection;
 import com.ybveg.govx.system.api.ModuleService;
 import java.util.Map;
@@ -36,8 +37,11 @@ public class ModuleController extends BaseController {
   @Autowired
   private AuthManager manager;
 
-  @Reference(version = "1.0")
+  @Reference(version = "1.0.0")
   private ModuleService service;
+
+  @Reference(version = "1.0.0")
+  private ModuleFunctionService moduleFunctionService;
 
   @PostMapping("scan")
   @Function(Scan.class)
@@ -49,7 +53,12 @@ public class ModuleController extends BaseController {
   }
 
   @GetMapping("page")
-  public R pageMoudle(int pageSize, int pageNum) throws Exception {
+  public R pageModule(int pageSize, int pageNum) throws Exception {
     return R.ok(service.listForPage(pageNum, pageSize));
+  }
+
+  @GetMapping("function")
+  public R getFuncByModuleCode(String moduleCode) throws Exception {
+    return R.ok(moduleFunctionService.getFuncByModuleCode(moduleCode));
   }
 }

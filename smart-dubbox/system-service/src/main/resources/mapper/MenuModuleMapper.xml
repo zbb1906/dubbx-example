@@ -4,7 +4,7 @@
 <mapper namespace="com.ybveg.govx.system.mapper.MenuModuleMapper">
   <resultMap id="BaseResultMap" type="com.ybveg.govx.system.model.po.MenuModule">
     <result column="menu_id" jdbcType="VARCHAR" property="menuId"/>
-    <result column="module_id" jdbcType="VARCHAR" property="moduleId"/>
+    <result column="module_code" jdbcType="VARCHAR" property="moduleCode"/>
   </resultMap>
   <insert id="insert" parameterType="com.ybveg.govx.system.model.po.MenuModule">
     insert into sys_menu_module (menu_id, module_id)

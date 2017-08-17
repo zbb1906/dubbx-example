@@ -4,7 +4,7 @@
 <mapper namespace="com.ybveg.govx.system.mapper.ModuleFunctionMapper">
   <resultMap id="BaseResultMap" type="com.ybveg.govx.system.model.po.ModuleFunction">
     <result column="id" jdbcType="VARCHAR" property="id"/>
-    <result column="module_id" jdbcType="VARCHAR" property="moduleId"/>
+    <result column="module_code" jdbcType="VARCHAR" property="moduleCode"/>
     <result column="func_code" jdbcType="VARCHAR" property="funcCode"/>
     <result column="clazz" jdbcType="VARCHAR" property="clazz"/>
     <result column="name" jdbcType="VARCHAR" property="name"/>
