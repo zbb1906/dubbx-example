@@ -1,6 +1,6 @@
 package com.ybveg.govx.system.api;
 
-import java.util.List;
+import com.github.pagehelper.PageInfo;
 import java.util.Map;
 
 /**
@@ -15,5 +15,5 @@ public interface ModuleService {
    * @Params: * @param pageNum 页数, @param pageSize 条数
    * @Return: Map<String, Object>
    */
-  List<Map<String, Object>> listForPage(int pageNum, int pageSize) throws Exception;
+  PageInfo<Map<String, Object>> listForPage(int pageNum, int pageSize) throws Exception;
 }

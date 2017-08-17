@@ -18,7 +18,7 @@ public class ModuleFunction extends BasePo<ModuleFunctionDto> implements Seriali
   @Id
   private String id;
 
-  private String moduleId;
+  private String moduleCode;
 
   private String funcCode;
 

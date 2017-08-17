@@ -15,9 +15,6 @@ public class Module extends BasePo<ModuleDto> implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
-  @Id
-  private String id;
-
   private String moduleCode;
 
   private String clazz;
